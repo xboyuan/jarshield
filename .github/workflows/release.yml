@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+      CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+      GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+          cache: maven
+          server-id: central
+          server-username: CENTRAL_USERNAME
+          server-password: CENTRAL_PASSWORD
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: GPG_PASSPHRASE
+
+      - name: Verify tag matches pom version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          POM="$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version)"
+          if [ "$TAG" != "$POM" ]; then
+            echo "Tag v$TAG does not match pom.xml version $POM"
+            exit 1
+          fi
+
+      - name: Deploy to Maven Central
+        run: mvn -B clean deploy -Pdeploy-central -DskipTests
+
+      - name: Upload GitHub Release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            jarshield-fatjar/target/jarshield-fatjar-*.jar
+            jarshield-core/target/jarshield-core-*.jar
+            jarshield-maven-plugin/target/jarshield-maven-plugin-*.jar

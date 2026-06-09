@@ -221,3 +221,5 @@ java -jar jarshield-fatjar-1.0.0.jar \
 # 致谢
 
 本项目基于 [ClassFinal](https://github.com/roseboy/classfinal)（Apache 2.0, roseboy）fork 并增强，详见 [NOTICE](NOTICE)。
+
+Git 提交规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。发布流程见 [doc/RELEASE.md](doc/RELEASE.md)。
