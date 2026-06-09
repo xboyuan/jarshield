@@ -63,7 +63,7 @@ public final class ConsoleStyle {
     }
 
     /**
-     * CLI 完整方框 banner（fatjar 交互模式）。
+     * CLI 完整方框 banner（交互模式）。
      */
     public static void printCliBanner() {
         System.out.println();

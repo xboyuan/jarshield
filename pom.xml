@@ -24,7 +24,7 @@
     <modules>
         <module>jarshield-core</module>
         <module>jarshield-maven-plugin</module>
-        <module>jarshield-fatjar</module>
+        <module>jarshield-cli</module>
     </modules>
 
     <properties>

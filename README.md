@@ -39,7 +39,7 @@ JarShield 是一个面向 Spring Boot 可执行 JAR/WAR 的字节码保护工具
 | 使用场景 | 模块 | Maven 坐标 |
 |:--|:--|:--|
 | Spring Boot / Maven 项目 | `jarshield-maven-plugin` | `com.by2tech:jarshield-maven-plugin:1.0.0` |
-| 命令行 / 非 Maven 项目 | `jarshield-fatjar` | 本地构建 `jarshield-fatjar/target/jarshield-fatjar-1.0.0.jar` |
+| 命令行 / 非 Maven 项目 | `jarshield-cli` | 本地构建 `jarshield-cli/target/jarshield-cli-1.0.0.jar` |
 | 核心库（一般无需直接依赖） | `jarshield-core` | `com.by2tech:jarshield-core:1.0.0` |
 ## Maven引入模式
 ### 1. 引入 Maven 插件
@@ -186,20 +186,20 @@ ENTRYPOINT ["sh", "-c", "java \
 无需 Maven 时，先构建 CLI 工具：
 
 ```bash
-mvn clean package -pl jarshield-fatjar -am -DskipTests
+mvn clean package -pl jarshield-cli -am -DskipTests
 ```
 或从 Release 中下载jar包   
 
 **交互式：**
 
 ```bash
-java -jar jarshield-fatjar-1.0.0.jar
+java -jar jarshield-cli-1.0.0.jar
 ```
 
 **命令行：**
 
 ```bash
-java -jar jarshield-fatjar-1.0.0.jar \
+java -jar jarshield-cli-1.0.0.jar \
   -file app.jar \
   -packages com.example \
   -libjars my-lib- \

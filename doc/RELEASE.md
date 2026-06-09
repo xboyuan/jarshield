@@ -52,4 +52,4 @@ mvn clean deploy -Pdeploy-private -DskipTests
 
 | 文件 | 说明 |
 |:--|:--|
-| `jarshield-fatjar-{version}.jar` | CLI 可执行胖 jar（`java -jar`） |
+| `jarshield-cli-{version}.jar` | CLI 可执行 jar（`java -jar`） |

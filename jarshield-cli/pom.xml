@@ -10,9 +10,9 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>jarshield-fatjar</artifactId>
+    <artifactId>jarshield-cli</artifactId>
     <packaging>jar</packaging>
-    <name>jarshield-fatjar</name>
+    <name>jarshield-cli</name>
 
     <dependencies>
         <dependency>

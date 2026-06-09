@@ -42,7 +42,7 @@
 |:--|:--|
 | `core` | `jarshield-core` |
 | `plugin` | `jarshield-maven-plugin` |
-| `fatjar` | `jarshield-fatjar` |
+| `cli` | `jarshield-cli` |
 | `docs` | `README.md`、`doc/`、`CONTRIBUTING.md` 等 |
 | `ci` | `.github/`、GitHub Actions |
 | `deps` | 依赖版本升级 |
