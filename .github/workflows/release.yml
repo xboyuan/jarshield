@@ -32,6 +32,7 @@ jobs:
           gpg-passphrase: GPG_PASSPHRASE
 
       - name: Verify tag matches pom version
+        id: project
         run: |
           TAG="${GITHUB_REF_NAME#v}"
           POM="$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version)"
@@ -39,6 +40,7 @@ jobs:
             echo "Tag v$TAG does not match pom.xml version $POM"
             exit 1
           fi
+          echo "version=$POM" >> "$GITHUB_OUTPUT"
 
       - name: Deploy to Maven Central
         run: mvn -B clean deploy -Pdeploy-central -DskipTests
@@ -47,7 +49,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          files: |
-            jarshield-fatjar/target/jarshield-fatjar-*.jar
-            jarshield-core/target/jarshield-core-*.jar
-            jarshield-maven-plugin/target/jarshield-maven-plugin-*.jar
+          files: jarshield-fatjar/target/jarshield-fatjar-${{ steps.project.outputs.version }}.jar

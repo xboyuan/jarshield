@@ -48,10 +48,8 @@ mvn clean deploy -Pdeploy-private -DskipTests
 
 ## GitHub Release 产物
 
+仅上传 CLI 胖 jar（Maven 依赖请走 Central，无需从 Release 下载）：
+
 | 文件 | 说明 |
 |:--|:--|
-| `jarshield-fatjar-*.jar` | CLI 可执行胖 jar（`java -jar`） |
-| `jarshield-core-*.jar` | 核心库 |
-| `jarshield-maven-plugin-*.jar` | Maven 插件 |
-
-Maven 依赖用户请使用 Central 坐标，无需下载 Release 附件。
+| `jarshield-fatjar-{version}.jar` | CLI 可执行胖 jar（`java -jar`） |
