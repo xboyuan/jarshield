@@ -38,9 +38,9 @@ JarShield 是一个面向 Spring Boot 可执行 JAR/WAR 的字节码保护工具
 
 | 使用场景 | 模块 | Maven 坐标 |
 |:--|:--|:--|
-| Spring Boot / Maven 项目 | `jarshield-maven-plugin` | `com.by2tech:jarshield-maven-plugin:1.0.0` |
-| 命令行 / 非 Maven 项目 | `jarshield-cli` | 本地构建 `jarshield-cli/target/jarshield-cli-1.0.0.jar` |
-| 核心库（一般无需直接依赖） | `jarshield-core` | `com.by2tech:jarshield-core:1.0.0` |
+| Spring Boot / Maven 项目 | `jarshield-maven-plugin` | `com.by2tech:jarshield-maven-plugin:1.0.1` |
+| 命令行 / 非 Maven 项目 | `jarshield-cli` | 本地构建 `jarshield-cli/target/jarshield-cli-1.0.1.jar` |
+| 核心库（一般无需直接依赖） | `jarshield-core` | `com.by2tech:jarshield-core:1.0.1` |
 ## Maven引入模式
 ### 1. 引入 Maven 插件
 
@@ -58,7 +58,7 @@ JarShield 是一个面向 Spring Boot 可执行 JAR/WAR 的字节码保护工具
             <plugin>
                 <groupId>com.by2tech</groupId>
                 <artifactId>jarshield-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.1</version>
                 <configuration>
                     <password>#</password>
                     <packages>com.example</packages>
@@ -193,13 +193,13 @@ mvn clean package -pl jarshield-cli -am -DskipTests
 **交互式：**
 
 ```bash
-java -jar jarshield-cli-1.0.0.jar
+java -jar jarshield-cli-1.0.1.jar
 ```
 
 **命令行：**
 
 ```bash
-java -jar jarshield-cli-1.0.0.jar \
+java -jar jarshield-cli-1.0.1.jar \
   -file app.jar \
   -packages com.example \
   -libjars my-lib- \
@@ -222,4 +222,4 @@ java -jar jarshield-cli-1.0.0.jar \
 
 本项目基于 [ClassFinal](https://github.com/roseboy/classfinal)（Apache 2.0, roseboy）fork 并增强，详见 [NOTICE](NOTICE)。
 
-Git 提交规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。发布流程见 [doc/RELEASE.md](doc/RELEASE.md)。
+Git 提交规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。

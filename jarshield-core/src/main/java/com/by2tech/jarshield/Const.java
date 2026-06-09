@@ -6,7 +6,7 @@ package com.by2tech.jarshield;
  * @author by2tech
  */
 public class Const {
-    public static final String VERSION = "v1.0.0";
+    public static final String VERSION = "v1.0.1";
 
     //加密出来的文件名
     public static final String FILE_NAME = ".classes";
