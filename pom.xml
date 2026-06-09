@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.by2tech</groupId>
+    <artifactId>jarshield-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>JarShield</name>
+    <description>
+        Java JAR/WAR bytecode protection tool with Spring Boot 3.x nested-jar support.
+        Fork lineage: ClassFinal by roseboy (Apache 2.0).
+    </description>
+    <url>https://github.com/xboyuan/jarshield</url>
+
+    <scm>
+        <connection>scm:git:git://github.com/xboyuan/jarshield.git</connection>
+        <developerConnection>scm:git:ssh://github.com/xboyuan/jarshield.git</developerConnection>
+        <url>https://github.com/xboyuan/jarshield</url>
+    </scm>
+
+    <modules>
+        <module>jarshield-core</module>
+        <module>jarshield-maven-plugin</module>
+        <module>jarshield-fatjar</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <javassist.version>3.30.2-GA</javassist.version>
+        <maven-plugin-api.version>3.9.6</maven-plugin-api.version>
+        <maven-plugin-annotations.version>3.11.0</maven-plugin-annotations.version>
+        <maven-core.version>3.9.6</maven-core.version>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>xboyuan</id>
+            <name>xboyuan</name>
+            <url>https://github.com/xboyuan</url>
+        </developer>
+    </developers>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.13.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>3.11.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.4.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <!-- 内网私服发布：mvn deploy -Pdeploy-private -->
+        <profile>
+            <id>deploy-private</id>
+            <distributionManagement>
+                <repository>
+                    <id>maven-releases</id>
+                    <url>http://192.168.108.70:8081/repository/maven-releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>maven-snapshots</id>
+                    <url>http://192.168.108.70:8081/repository/maven-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+</project>

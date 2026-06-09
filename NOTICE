@@ -1,0 +1,9 @@
+JarShield
+Copyright 2026 by2tech (com.by2tech)
+
+This product includes software developed by roseboy as part of ClassFinal
+(https://github.com/roseboy/classfinal), licensed under the Apache License 2.0.
+
+Original ClassFinal copyright notices and license terms are preserved in LICENSE.
+
+Modifications include Spring Boot 3.x nested-jar support and rebranding as JarShield.

@@ -1,0 +1,10 @@
+${AnsiColor.BRIGHT_CYAN}      _            ____  _     _      _     _ ${AnsiColor.DEFAULT}
+${AnsiColor.BRIGHT_CYAN}     | | __ _ _ __/ ___|| |__ (_) ___| | __| |${AnsiColor.DEFAULT}
+${AnsiColor.BRIGHT_CYAN}  _  | |/ _` | '__\___ \| '_ \| |/ _ \ |/ _` |${AnsiColor.DEFAULT}
+${AnsiColor.BRIGHT_CYAN} | |_| | (_| | |   ___) | | | | |  __/ | (_| |${AnsiColor.DEFAULT}
+${AnsiColor.BRIGHT_CYAN}  \___/ \__,_|_|  |____/|_| |_|_|\___|_|\__,_|${AnsiColor.DEFAULT}
+
+${AnsiColor.BRIGHT_GREEN} :: JarShield ::${AnsiColor.DEFAULT}                (${jarshield.version})
+${AnsiColor.BRIGHT_GREEN} :: Protection ::${AnsiColor.DEFAULT}             ${AnsiColor.BRIGHT_YELLOW}Bytecode Encrypted${AnsiColor.DEFAULT}
+${AnsiColor.BRIGHT_GREEN} :: Provider ::${AnsiColor.DEFAULT}               com.by2tech
+${AnsiColor.BRIGHT_GREEN} :: Compatible ::${AnsiColor.DEFAULT}             Spring Boot 3+
